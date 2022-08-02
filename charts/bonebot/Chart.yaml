@@ -1,0 +1,23 @@
+apiVersion: v2
+appVersion: 1.0.0
+description: bonebot helm package
+name: bonebot
+version: 1.5.7
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - bonebot
+home: https://github.com/k8s-at-home/charts/tree/master/charts/stable/bonebot
+icon: https://raw.githubusercontent.com/jeremynoesen/BoneBot/main/img/Logo.svg
+sources:
+  - https://github.com/jeremynoesen/BoneBot
+maintainers:
+  - name: diademiemi
+    email: emilia@diademiemi.me
+dependencies:
+  - name: common
+    repository: https://library-charts.k8s-at-home.com
+    version: 4.5.1
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Initial version

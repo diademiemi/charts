@@ -1,0 +1,1 @@
+Please mount a persistent volume at /data. This should contain the resources folder with the configuration for BoneBot.  
