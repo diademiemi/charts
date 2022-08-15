@@ -28,4 +28,32 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/bonebot-1.0.0/bonebot-1.0.0.tgz
     version: 1.0.0
-generated: "2022-08-02T13:50:14.957733787Z"
+  dropspace:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-08-15T21:52:59.981253751Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.1
+    description: dropspace helm package
+    digest: a544f7eb7d6d12fc97edfe9d7ce84b486d5e8478ee509421b3dbd69213cc587a
+    home: https://github.com/leventdev/dropspace
+    icon: https://github.com/leventdev/dropspace/raw/main/public/mockups/logo.png
+    keywords:
+    - dropspace
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: emilia@diademiemi.me
+      name: diademiemi
+    name: dropspace
+    sources:
+    - https://github.com/leventdev/dropspace
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/dropspace-1.0.0/dropspace-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-08-15T21:52:59.981294951Z"
