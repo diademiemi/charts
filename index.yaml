@@ -56,4 +56,30 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/dropspace-1.0.0/dropspace-1.0.0.tgz
     version: 1.0.0
-generated: "2022-08-15T21:52:59.981294951Z"
+  site:
+  - annotations:
+      artifacthub.io/changes: |
+        - kind: added
+          description: Initial version
+    apiVersion: v2
+    appVersion: 1.5.7
+    created: "2022-08-21T21:44:11.771306903Z"
+    dependencies:
+    - name: common
+      repository: https://library-charts.k8s-at-home.com
+      version: 4.5.1
+    description: diademiemi's sites
+    digest: a4e5d9d790746dce1bf59b5fdc4005d179691cc95a8d3147ce647b46c04497a3
+    keywords:
+    - site
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: emilia@diademiemi.me
+      name: diademiemi
+    name: site
+    sources:
+    - https://github.com/diademiemi/blahaj.sh
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/site-1.0.0/site-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-08-21T21:44:11.771313803Z"
