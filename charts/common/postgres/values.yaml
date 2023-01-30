@@ -66,3 +66,10 @@ tolerations: []
 affinity: {}
 
 env: {}
+
+persistence:
+  enabled: false
+  accessMode: ReadWriteOnce
+  size: 4Gi
+  # storageClass: ""
+  # existingClaim: ""
