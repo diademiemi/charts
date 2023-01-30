@@ -82,11 +82,13 @@ tolerations: []
 affinity: {}
 
 env:
+  APP_BASE_URL: https://joplin.example.com
+  APP_PORT: 443
   DB_CLIENT: pg
   POSTGRES_PASSWORD: joplin
   POSTGRES_USER: joplin
   POSTGRES_DATABASE: joplin
-  POSTGRES_HOST: common-postgres-postgresql
+  POSTGRES_HOST: postgres-postgres
   POSTGRES_PORT: 5432
 
 postgres:
