@@ -96,3 +96,7 @@ postgres:
     POSTGRES_PASSWORD: joplin
     POSTGRES_USER: joplin
     POSTGRES_DB: joplin
+  persistence:
+    enabled: false
+    size: 4Gi
+    accessMode: ReadWriteOnce
