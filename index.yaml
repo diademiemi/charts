@@ -56,6 +56,17 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/dropspace-1.0.0/dropspace-1.0.0.tgz
     version: 1.0.0
+  postgres:
+  - apiVersion: v2
+    appVersion: "15.1"
+    created: "2023-01-30T21:44:18.411220239Z"
+    description: A Helm chart for Postgres
+    digest: 9534f3ca747020c3ebfb183aef9f5773a35b232b83ea8a1265f627d82f02cbf6
+    name: postgres
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/postgres-0.1.0/postgres-0.1.0.tgz
+    version: 0.1.0
   site:
   - annotations:
       artifacthub.io/changes: |
@@ -82,4 +93,4 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/site-1.0.0/site-1.0.0.tgz
     version: 1.0.0
-generated: "2022-08-21T21:44:11.771313803Z"
+generated: "2023-01-30T21:44:18.411225439Z"
