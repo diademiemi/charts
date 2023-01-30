@@ -81,12 +81,16 @@ tolerations: []
 
 affinity: {}
 
-global:
+env:
+  DB_CLIENT: pg
+  POSTGRES_PASSWORD: joplin
+  POSTGRES_USER: joplin
+  POSTGRES_DATABASE: joplin
+  POSTGRES_HOST: common-postgres-postgresql
+  POSTGRES_PORT: 5432
+
+postgres:
   env:
-    DB_CLIENT: pg
     POSTGRES_PASSWORD: joplin
     POSTGRES_USER: joplin
-    POSTGRES_DB: joplin # For the Postgres server
-    POSTGRES_DATABASE: joplin # For the Joplin server
-    POSTGRES_HOST: common-postgres-postgresql
-    POSTGRES_PORT: 5432
+    POSTGRES_DB: joplin
