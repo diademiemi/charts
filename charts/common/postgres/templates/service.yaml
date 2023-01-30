@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "common-postgres.fullname" . }}
+  name: {{ include "postgres.fullname" . }}
   labels:
-    {{- include "common-postgres.labels" . | nindent 4 }}
+    {{- include "postgres.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: postgres
   selector:
-    {{- include "common-postgres.selectorLabels" . | nindent 4 }}
+    {{- include "postgres.selectorLabels" . | nindent 4 }}

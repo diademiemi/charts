@@ -30,10 +30,18 @@ jobs:
         with:
           version: v3.8.1
 
-      - name: Run chart-releaser
+      - name: Relase common charts
         uses: helm/chart-releaser-action@v1.4.0
         with:
-          charts_dir: charts
+          charts_dir: charts/common
+          charts_repo_url: https://diademiemi.github.io/charts
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Relase app charts
+        uses: helm/chart-releaser-action@v1.4.0
+        with:
+          charts_dir: charts/apps
           charts_repo_url: https://diademiemi.github.io/charts
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"

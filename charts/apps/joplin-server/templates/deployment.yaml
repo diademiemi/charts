@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "common-postgres.fullname" . }}
+  name: {{ include "joplin-server.fullname" . }}
   labels:
-    {{- include "common-postgres.labels" . | nindent 4 }}
+    {{- include "joplin-server.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "common-postgres.selectorLabels" . | nindent 6 }}
+      {{- include "joplin-server.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "common-postgres.selectorLabels" . | nindent 8 }}
+        {{- include "joplin-server.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "common-postgres.serviceAccountName" . }}
+      serviceAccountName: {{ include "joplin-server.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -36,9 +36,17 @@ spec:
           env:
             {{- toYaml .Values.env | nindent 12 }}
           ports:
-            - name: postgres
+            - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
