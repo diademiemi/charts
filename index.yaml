@@ -74,6 +74,16 @@ entries:
   postgres:
   - apiVersion: v2
     appVersion: "15.1"
+    created: "2023-01-30T22:46:14.336798093Z"
+    description: A Helm chart for Postgres
+    digest: a8417104a8babcff0221bc7adc60976ce7c3bccd21c1a9e09e5a86b4087d61f6
+    name: postgres
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/postgres-0.1.1/postgres-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: "15.1"
     created: "2023-01-30T21:44:18.411220239Z"
     description: A Helm chart for Postgres
     digest: 9534f3ca747020c3ebfb183aef9f5773a35b232b83ea8a1265f627d82f02cbf6
@@ -108,4 +118,4 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/site-1.0.0/site-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-30T22:41:49.701031247Z"
+generated: "2023-01-30T22:46:14.336805793Z"
