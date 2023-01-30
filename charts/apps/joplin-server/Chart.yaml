@@ -25,6 +25,6 @@ appVersion: "2.10.5-beta"
 
 
 dependencies:
-  - name: postgresql
+  - name: postgres
     repository: https://diademiemi.github.io/charts
     version: 0.1.0

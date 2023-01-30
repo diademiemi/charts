@@ -1,0 +1,6 @@
+dependencies:
+- name: postgres
+  repository: https://diademiemi.github.io/charts
+  version: 0.1.0
+digest: sha256:22dffc6bc14efb3aafd40413659423b6978038678875d3483ff733fa008f74d1
+generated: "2023-01-30T23:30:22.953707137+01:00"
