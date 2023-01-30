@@ -1,1 +1,0 @@
-Please mount a persistent volume at /app/dropspace/storage/app. This should contain the resources folder with the configuration for Dropspace. See values.yaml for more options.
