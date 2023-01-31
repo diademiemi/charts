@@ -59,6 +59,20 @@ entries:
   joplin-server:
   - apiVersion: v2
     appVersion: 2.10.5-beta
+    created: "2023-01-31T00:57:24.705834752Z"
+    dependencies:
+    - name: postgres
+      repository: https://diademiemi.github.io/charts
+      version: 0.2.2
+    description: A Helm chart to deploy Joplin Server
+    digest: 004dfcb946137cb8c4a044230f79af61668c5e2cc89876145d8ad3523c2a9d5d
+    name: joplin-server
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/joplin-server-0.2.3/joplin-server-0.2.3.tgz
+    version: 0.2.3
+  - apiVersion: v2
+    appVersion: 2.10.5-beta
     created: "2023-01-31T00:47:17.678903791Z"
     dependencies:
     - name: postgres
@@ -246,4 +260,4 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/site-1.0.0/site-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-31T00:47:17.678944692Z"
+generated: "2023-01-31T00:57:24.705878753Z"
