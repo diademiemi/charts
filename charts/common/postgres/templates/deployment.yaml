@@ -40,7 +40,7 @@ spec:
               protocol: TCP
           volumeMounts:
             - name: data
-              mountPath: /var/lib/postgresql/data
+              mountPath: {{ .Values.persistence.mountPath }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       volumes:
