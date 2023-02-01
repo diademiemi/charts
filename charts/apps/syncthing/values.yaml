@@ -39,16 +39,16 @@ securityContext: {}
 service:
   web:
     type: ClusterIP
-    port: 8384
+    port: 8384 # tcp
   tcp:
     type: ClusterIP # Change to LoadBalancer if you want to expose the service
-    port: 22000
+    port: 22000 # tcp
   udp:
     type: ClusterIP # Change to LoadBalancer if you want to expose the service
-    port: 22000/udp
+    port: 22000 # udp
   discovery:
     type: ClusterIP # Change to LoadBalancer if you want to expose the service
-    port: 21027/udp
+    port: 21027 # udp
 
 ingress:
   enabled: false # Uses service.web
