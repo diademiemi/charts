@@ -260,4 +260,15 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/site-1.0.0/site-1.0.0.tgz
     version: 1.0.0
-generated: "2023-01-31T00:57:24.705878753Z"
+  syncthing:
+  - apiVersion: v2
+    appVersion: "1.23"
+    created: "2023-02-01T11:28:45.917128034Z"
+    description: Syncthing Helm Chart
+    digest: 228f1276d9e6ecea927066a0b673c0697921b3d8e033656362b89f172a562c22
+    name: syncthing
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/syncthing-0.1.0/syncthing-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-02-01T11:28:45.917159034Z"
