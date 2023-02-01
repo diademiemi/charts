@@ -1,0 +1,80 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "syncthing.fullname" . }}-web
+  labels:
+    {{- include "syncthing.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.web.type }}
+  ports:
+    - port: {{ .Values.service.web.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "syncthing.selectorLabels" . | nindent 4 }}
+{{- if .Values.service.web.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.web.loadBalancerIP }}
+{{- end }}
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "syncthing.fullname" . }}-tcp
+  labels:
+    {{- include "syncthing.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.tcp.type }}
+  ports:
+    - port: {{ .Values.service.tcp.port }}
+      targetPort: tcp
+      protocol: TCP
+      name: tcp
+  selector:
+    {{- include "syncthing.selectorLabels" . | nindent 4 }}
+{{- if .Values.service.tcp.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.tcp.loadBalancerIP }}
+{{- end }}
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "syncthing.fullname" . }}-udp
+  labels:
+    {{- include "syncthing.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.udp.type }}
+  ports:
+    - port: {{ .Values.service.udp.port }}
+      targetPort: udp
+      protocol: UDP
+      name: udp
+  selector:
+    {{- include "syncthing.selectorLabels" . | nindent 4 }}
+{{- if .Values.service.udp.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.udp.loadBalancerIP }}
+{{- end }}
+
+---
+
+apiVersion: apps/v1
+kind: Service
+metadata:
+  name: {{ include "syncthing.fullname" . }}-discovery
+  labels:
+    {{- include "syncthing.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.discovery.type }}
+  ports:
+    - port: {{ .Values.service.discovery.port }}
+      targetPort: discovery
+      protocol: UDP
+      name: discovery
+  selector:
+    {{- include "syncthing.selectorLabels" . | nindent 4 }}
+{{- if .Values.service.discovery.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.discovery.loadBalancerIP }}
+{{- end }}
