@@ -40,15 +40,22 @@ service:
   web:
     type: ClusterIP
     port: 8384 # tcp
+    targetPort: 8384 # tcp
   tcp:
     type: ClusterIP # Change to LoadBalancer if you want to expose the service
     port: 22000 # tcp
+    targetPort: 22000 # tcp
+    externalTrafficPolicy: Local
   udp:
     type: ClusterIP # Change to LoadBalancer if you want to expose the service
     port: 22000 # udp
+    targetPort: 22000 # udp
+    externalTrafficPolicy: Local
   discovery:
     type: ClusterIP # Change to LoadBalancer if you want to expose the service
     port: 21027 # udp
+    targetPort: 21027 # udp
+    externalTrafficPolicy: Local
 
 ingress:
   enabled: false # Uses service.web

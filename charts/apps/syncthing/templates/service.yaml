@@ -8,13 +8,14 @@ spec:
   type: {{ .Values.service.web.type }}
   ports:
     - port: {{ .Values.service.web.port }}
-      targetPort: http
+      targetPort: {{ .Values.service.web.targetPort }}
       protocol: TCP
       name: http
   selector:
     {{- include "syncthing.selectorLabels" . | nindent 4 }}
 {{- if .Values.service.web.loadBalancerIP }}
   loadBalancerIP: {{ .Values.service.web.loadBalancerIP }}
+  ExternalTrafficPolicy: {{ .Values.service.web.externalTrafficPolicy }}
 {{- end }}
 ---
 
@@ -28,13 +29,14 @@ spec:
   type: {{ .Values.service.tcp.type }}
   ports:
     - port: {{ .Values.service.tcp.port }}
-      targetPort: tcp
+      targetPort: {{ .Values.service.tcp.targetPort }}
       protocol: TCP
       name: tcp
   selector:
     {{- include "syncthing.selectorLabels" . | nindent 4 }}
 {{- if .Values.service.tcp.loadBalancerIP }}
   loadBalancerIP: {{ .Values.service.tcp.loadBalancerIP }}
+  ExternalTrafficPolicy: {{ .Values.service.tcp.externalTrafficPolicy }}
 {{- end }}
 
 ---
@@ -49,13 +51,14 @@ spec:
   type: {{ .Values.service.udp.type }}
   ports:
     - port: {{ .Values.service.udp.port }}
-      targetPort: udp
+      targetPort: {{ .Values.service.udp.targetPort }}
       protocol: UDP
       name: udp
   selector:
     {{- include "syncthing.selectorLabels" . | nindent 4 }}
 {{- if .Values.service.udp.loadBalancerIP }}
   loadBalancerIP: {{ .Values.service.udp.loadBalancerIP }}
+  ExternalTrafficPolicy: {{ .Values.service.udp.externalTrafficPolicy }}
 {{- end }}
 
 ---
@@ -70,11 +73,12 @@ spec:
   type: {{ .Values.service.discovery.type }}
   ports:
     - port: {{ .Values.service.discovery.port }}
-      targetPort: discovery
+      targetPort: {{ .Values.service.discovery.targetPort }}
       protocol: UDP
       name: discovery
   selector:
     {{- include "syncthing.selectorLabels" . | nindent 4 }}
 {{- if .Values.service.discovery.loadBalancerIP }}
   loadBalancerIP: {{ .Values.service.discovery.loadBalancerIP }}
+  ExternalTrafficPolicy: {{ .Values.service.discovery.externalTrafficPolicy }}
 {{- end }}
