@@ -263,6 +263,16 @@ entries:
   syncthing:
   - apiVersion: v2
     appVersion: "1.23"
+    created: "2023-02-02T19:11:25.072005225Z"
+    description: Syncthing Helm Chart
+    digest: d93225065f78639da30117f790ebbbfa9cf4feaacb8a6e7300985d0f134c9388
+    name: syncthing
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/syncthing-0.1.3/syncthing-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: "1.23"
     created: "2023-02-01T13:03:45.268158426Z"
     description: Syncthing Helm Chart
     digest: 76327d5238a0eff295393975b954945990570fa4dca98b28853691e90a423af2
@@ -291,4 +301,4 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/syncthing-0.1.0/syncthing-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-01T13:03:45.268193428Z"
+generated: "2023-02-02T19:11:25.072151528Z"
