@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "jellyfin.fullname" . }}-web
+  labels:
+    {{- include "jellyfin.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.web.type }}
+  ports:
+    - port: {{ .Values.service.web.port }}
+      targetPort: {{ .Values.service.web.targetPort }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "jellyfin.selectorLabels" . | nindent 4 }}
+{{- if .Values.service.web.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.web.loadBalancerIP }}
+  ExternalTrafficPolicy: {{ .Values.service.web.externalTrafficPolicy }}
+{{- end }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "jellyfin.fullname" . }}-api
+  labels:
+    {{- include "jellyfin.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.dlna.type }}
+  ports:
+    - port: {{ .Values.service.dlna.port }}
+      targetPort: {{ .Values.service.dlna.targetPort }}
+      protocol: TCP
+      name: dlna
+  selector:
+    {{- include "jellyfin.selectorLabels" . | nindent 4 }}
+{{- if .Values.service.dlna.loadBalancerIP }}
+  loadBalancerIP: {{ .Values.service.dlna.loadBalancerIP }}
+  ExternalTrafficPolicy: {{ .Values.service.dlna.externalTrafficPolicy }}
+{{- end }}
+---
