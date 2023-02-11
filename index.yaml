@@ -59,6 +59,16 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-02-11T17:59:37.418109368Z"
+    description: A Helm chart for Kubernetes
+    digest: d518741892bb786dd4f98f0c6694f3f69a461086ce5a65f6403249d9e29cbc40
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/jellyfin-0.1.2/jellyfin-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-02-11T17:32:24.505107656Z"
     description: A Helm chart for Kubernetes
     digest: 2f451ab74ad19e2ffa294f7c85cd65f388801c8e57e7fdfb2ba5b31dd573f69a
@@ -284,6 +294,16 @@ entries:
   syncthing:
   - apiVersion: v2
     appVersion: "1.23"
+    created: "2023-02-11T17:59:37.582207598Z"
+    description: Syncthing Helm Chart
+    digest: 5bb328628cf809713ccee9b54d5e361dd09375855d4469c4575e6e634d34aa82
+    name: syncthing
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/syncthing-0.1.4/syncthing-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: "1.23"
     created: "2023-02-02T19:11:25.072005225Z"
     description: Syncthing Helm Chart
     digest: d93225065f78639da30117f790ebbbfa9cf4feaacb8a6e7300985d0f134c9388
@@ -333,4 +353,4 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-11T17:32:24.505227756Z"
+generated: "2023-02-11T17:59:37.582351198Z"
