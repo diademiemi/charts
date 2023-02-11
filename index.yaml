@@ -59,6 +59,16 @@ entries:
   jellyfin:
   - apiVersion: v2
     appVersion: 10.8.9
+    created: "2023-02-11T18:23:08.931764059Z"
+    description: A Helm chart for Kubernetes
+    digest: 9ff58ff97b1e907dc3f84f6ad3b163266cb4de7e264e2910519bc5e08d31e3d8
+    name: jellyfin
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/jellyfin-0.1.4/jellyfin-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: 10.8.9
     created: "2023-02-11T18:05:36.603958706Z"
     description: A Helm chart for Kubernetes
     digest: 1783a2d7cbe4af68a3a689de92238f41e076e8659948d3a54447ec2a441bd5cf
@@ -373,4 +383,4 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-11T18:05:36.604114113Z"
+generated: "2023-02-11T18:23:08.931856867Z"
