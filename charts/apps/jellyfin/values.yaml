@@ -39,8 +39,8 @@ securityContext: {}
 service:
   web:
     type: ClusterIP
-    port: 8384 # tcp
-    targetPort: 8384 # tcp
+    port: 8096 # tcp
+    targetPort: 8096 # tcp
   dlna:
     type: ClusterIP # Change to LoadBalancer if you want to expose the service
     port: 1900 # udp
