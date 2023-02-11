@@ -345,6 +345,16 @@ entries:
   vaultwarden:
   - apiVersion: v2
     appVersion: 1.27.0
+    created: "2023-02-11T17:59:43.097631148Z"
+    description: A Helm chart to deploy Vaultwarden
+    digest: 420002a5f9a8399846d5ea577cd8e27f8b62f7a3dd003e49d25a15baa9c42d7a
+    name: vaultwarden
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/vaultwarden-0.1.1/vaultwarden-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 1.27.0
     created: "2023-02-10T19:59:54.55889952Z"
     description: A Helm chart to deploy Vaultwarden
     digest: cd5dc900c2642afd91db5537cb8fa63913ba0114a62ba8208aeb898e5e72743a
@@ -353,4 +363,4 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2023-02-11T17:59:37.582351198Z"
+generated: "2023-02-11T17:59:43.09766515Z"
