@@ -234,6 +234,17 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/joplin-server-0.1.0/joplin-server-0.1.0.tgz
     version: 0.1.0
+  libreddit:
+  - apiVersion: v2
+    appVersion: latest
+    created: "2023-07-09T00:32:13.084437561Z"
+    description: A Helm chart for Libreddit, a libre Reddit front-end focused on privacy.
+    digest: a41b898310161ec6ead4f397f6e594264dabc56df1f9bc7ee7deeaf79439d02f
+    name: libreddit
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/libreddit-0.1.0/libreddit-0.1.0.tgz
+    version: 0.1.0
   postgres:
   - apiVersion: v2
     appVersion: "15.1"
@@ -393,4 +404,4 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2023-06-15T21:32:58.458071376Z"
+generated: "2023-07-09T00:32:13.084500966Z"
