@@ -1,0 +1,98 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "libreddit.fullname" . }}
+  labels:
+    {{- include "libreddit.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "libreddit.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "libreddit.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "libreddit.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: "SFW_ONLY"
+              value: "{{ .Values.settings.sfw_only }}"
+            - name: "BANNER"
+              value: "{{ .Values.settings.banner }}"
+            - name: "ROBOTS_DISABLE_INDEXING"
+              value: "{{ .Values.settings.robots_disable_indexing }}"
+            - name: "PUSHSHIFT_FRONTEND"
+              value: "{{ .Values.settings.pushshift_frontend }}"
+            - name: "LIBREDDIT_DEFAULT_THEME"
+              value: "{{ .Values.userdefaults.theme }}"
+            - name: "LIBREDDIT_DEFAULT_FRONT_PAGE"
+              value: "{{ .Values.userdefaults.front_page }}"
+            - name: "LIBREDDIT_DEFAULT_LAYOUT"
+              value: "{{ .Values.userdefaults.layout }}"
+            - name: "LIBREDDIT_DEFAULT_WIDE"
+              value: "{{ .Values.userdefaults.wide }}"
+            - name: "LIBREDDIT_DEFAULT_POST_SORT"
+              value: "{{ .Values.userdefaults.post_sort }}"
+            - name: "LIBREDDIT_DEFAULT_COMMENT_SORT"
+              value: "{{ .Values.userdefaults.comment_sort }}"
+            - name: "LIBREDDIT_DEFAULT_SHOW_NSFW"
+              value: "{{ .Values.userdefaults.show_nsfw }}"
+            - name: "LIBREDDIT_DEFAULT_BLUR_NSFW"
+              value: "{{ .Values.userdefaults.blur_nsfw }}"
+            - name: "LIBREDDIT_DEFAULT_USE_HLS"
+              value: "{{ .Values.userdefaults.use_hls }}"
+            - name: "LIBREDDIT_DEFAULT_HIDE_HLS_NOTIFICATION"
+              value: "{{ .Values.userdefaults.hide_hls_notification }}"
+            - name: "LIBREDDIT_DEFAULT_AUTOPLAY_VIDEOS"
+              value: "{{ .Values.userdefaults.autoplay_videos }}"
+            - name: "LIBREDDIT_DEFAULT_SUBSCRIPTIONS"
+              value: "{{ .Values.userdefaults.subscriptions }}"
+            - name: "LIBREDDIT_DEFAULT_HIDE_AWARDS"
+              value: "{{ .Values.userdefaults.hide_awards }}"
+            - name: "LIBREDDIT_DEFAULT_DISABLE_VISIT_REDDIT_CONFIRMATION"
+              value: "{{ .Values.userdefaults.disable_visit_reddit_confirmation }}"
+          ports:
+            - name: http
+              containerPort: {{ .Values.service.port }}
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
