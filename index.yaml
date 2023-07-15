@@ -237,6 +237,16 @@ entries:
   libreddit:
   - apiVersion: v2
     appVersion: latest
+    created: "2023-07-15T12:52:12.000998373Z"
+    description: A Helm chart for Libreddit, a libre Reddit front-end focused on privacy.
+    digest: 2a60ac9e3fe1fdd23458dc25b968642a1d03730f74160802af5b175e6fa04dc8
+    name: libreddit
+    type: application
+    urls:
+    - https://github.com/diademiemi/charts/releases/download/libreddit-0.1.1/libreddit-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: latest
     created: "2023-07-09T00:32:13.084437561Z"
     description: A Helm chart for Libreddit, a libre Reddit front-end focused on privacy.
     digest: a41b898310161ec6ead4f397f6e594264dabc56df1f9bc7ee7deeaf79439d02f
@@ -404,4 +414,4 @@ entries:
     urls:
     - https://github.com/diademiemi/charts/releases/download/vaultwarden-0.1.0/vaultwarden-0.1.0.tgz
     version: 0.1.0
-generated: "2023-07-09T00:32:13.084500966Z"
+generated: "2023-07-15T12:52:12.001178072Z"
